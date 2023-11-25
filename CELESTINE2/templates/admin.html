@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+
+
+<div class="admin">
+    <nav class="nav" style="width: 100%;">
+        <h6 style="float: left;">Welcome {{user.username}}</h6>
+        <a href="/logout/" class="logout">Logout</a>
+        <!-- <a href="/register/" class="adduser"style="">Add User</a> -->
+        
+    </nav><br>
+    <hr style="margin: 0;">
+</div>
+<div style="margin-top: 20px;margin-bottom: 30px;">
+    <div class="admind">
+        Students
+        <h1>{{students}}</h1>
+        <a href="/allstudents/">View</a>
+    </div>
+    <div class="admind">
+        Staff
+        <h1>{{staffcount}}</h1>
+        <a href="/staffpage/">View</a>
+    </div> 
+    <div class="admind">
+        Units
+        <h1>4</h1>
+      
+    </div>
+</div>
+<div class="units" style="height: 60vh;">
+    <div style="height: 60vh;">
+        <canvas id="myChart"></canvas>
+    </div>
+      
+      
+      
+      <script>
+        const ctx = document.getElementById('myChart');
+      
+        new Chart(ctx, {
+          type: 'bar',
+          data: {
+            labels: ['Python','JavaScript','Php', 'SQL'],
+            datasets: [{
+              label: '# of failing Students',
+              data: [{{pythonfail}},{{jsfail}},{{phpfail}},{{sqlfail}}],
+              borderWidth: 1
+            }]
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+      </script>
+</div>
+
+
+{%endblock content%}

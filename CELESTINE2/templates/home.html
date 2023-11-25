@@ -1,0 +1,78 @@
+{%extends 'base.html'%}
+{%block content%}
+
+
+<nav class="nav">
+    <a href="#">Home</a>
+   
+    
+    <a href="/logout/" class="logout">Logout</a>
+    
+</nav>
+<hr>
+<div class="container">
+    <div class="row">
+      <div class="col-sm">
+        <h1>Enroll a student</h1>
+        {%for m in messages%}
+        <p style="color:red">{{m}}</p>
+        {%endfor%}
+        <form action=""method="POST">
+            {%csrf_token%}
+            {{form.as_p}}
+            <input type="submit"value="Enroll" class="btn btn-primary" style="width: 20%;">
+        </form>
+        <hr>
+        <h6>Registration number:{%for m in messages%}{{m}}{%endfor%}</h6>
+        <hr>
+
+        
+
+      </div>
+      <div class="col-sm">
+        <div>
+          <canvas id="myChart"></canvas>
+        </div>
+        
+        
+        
+        <script>
+          const ctx = document.getElementById('myChart');
+        
+          new Chart(ctx, {
+            type: 'bar',
+            data: {
+              labels: ['Python','JavaScript','Php', 'SQL'],
+              datasets: [{
+                label: '# of Students',
+                data: [{%for u in units%}{{u}},{%endfor%}],
+                
+                borderWidth: 1
+              }]
+            },
+            options: {
+              scales: {
+                y: {
+                  beginAtZero: true
+                }
+              }
+            }
+          });
+        </script>
+        <hr>
+        <div class="students">
+            <h3>Total students</h3>
+            <h1>{{all}}</h1>
+            <a href="/allstudents/" class="btn btn-success" style="font-weight: bold;">View</a>
+        </div>
+      </div>
+      
+
+    </div>
+  </div>
+
+
+<script>
+    console.log("Window Location:",window.location);
+</script>
+{%endblock content%}

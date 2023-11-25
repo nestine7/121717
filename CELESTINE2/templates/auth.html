@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{%block content%}
+{% load crispy_forms_tags %}
+
+<div class="row">
+    
+        <div class="col-4">
+            <form action="" method="POST" autocomplete="off">
+                {%csrf_token%}
+                {%for msg in messages%}<p style="color: red;">{{msg}}</p>{%endfor%}
+                {{form|crispy}}
+                <br>
+                <button type="submit" class="btn btn-primary">Login</button>
+                <p>Forgot password?<a href="/reset_password/">Click here</a></p>
+            </form>
+            
+        </div>
+    
+    
+</div>
+
+{%endblock content%}

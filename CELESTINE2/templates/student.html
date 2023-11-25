@@ -1,0 +1,100 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/logout/" class="logout">Logout</a>
+{%for msg in messages%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%endfor%}
+<table class="table table-striped" style="width: 35vw;">
+    
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"></th>
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <th>Name</th>
+        <td>{{student.name}}</td>
+      </tr>
+      <tr>
+        <th>Reg_no</th>
+        <td>{{student.pk}}</td>
+      </tr>
+      <tr>
+        <th>Units</th>
+        <td>{%for u in student.units.all%}{{u}}, {%endfor%}</td>
+      </tr>
+      <tr>
+        <th>Clubs</th>
+        <td>{%for c in student.clubs.all%}{{c}}, {%endfor%}</td>
+      </tr>
+      
+      
+      
+    
+    </tbody>
+  </table>
+  <hr style="color: black;">
+<table class="table table-striped">
+    
+    <thead>
+      <tr>
+        <th scope="col">Unit</th>
+        <th scope="col">Cat1</th>
+        <th scope="col">cat2</th>
+        <th scope="col">cat3</th>
+        <th scope="col">Total/50</th>
+       
+
+      </tr>
+    </thead>
+    <tbody>
+    
+      <tr>
+        <th>python</th>
+        <td>{{python.cat1}}</td>
+        <td>{{python.cat2}}</td>
+        <td>{{python.cat3}}</td>
+        <td>{{python.total}}</td>
+        <td><a href="/pyatt/">Attendance</a></td>
+        
+      </tr>
+      <tr>
+        <th>Javascript</th>
+        <td>{{js.cat1}}</td>
+        <td>{{js.cat2}}</td>
+        <td>{{js.cat3}}</td>
+        <td>{{js.total}}</td>
+        <td><a href="/jsatt/">Attendance</a></td>
+        
+      </tr>
+      <tr>
+        <th>PHP</th>
+        <td>{{php.cat1}}</td>
+        <td>{{php.cat2}}</td>
+        <td>{{php.cat3}}</td>
+        <td>{{php.total}}</td>
+        <td><a href="/phpatt/">Attendance</a></td>
+        
+      </tr>
+      <tr>
+        <th>Sql</th>
+        <td>{{sql.cat1}}</td>
+        <td>{{sql.cat2}}</td>
+        <td>{{sql.cat3}}</td>
+        <td>{{sql.total}}</td>
+        <td><a href="/sqlatt/">Attendance</a></td>
+        
+      </tr>
+      
+      
+    
+    </tbody>
+  </table>
+{%endblock content%}

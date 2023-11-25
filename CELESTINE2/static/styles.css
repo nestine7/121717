@@ -1,0 +1,234 @@
+body{
+    padding-left: 50px;
+    padding-right: 50px;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+.head{
+    background-color: rgb(230, 228, 228);
+    padding-top: 10px;
+    
+   
+}
+.head img{
+    width: 100px;
+    height: 60px;
+   
+}
+.head h2{
+    margin-left: 25%;
+}
+
+
+.row{
+   
+    display:flex;
+    justify-content: center;
+}
+.row form{
+    width:100%;
+    
+}
+.row form input{
+    width:100%;
+    border: 1px solid grey;
+    height: 40px;
+    border-radius:5px;
+}
+.row form input:focus{
+    border-color: #00b894;
+    box-shadow: 0 0 10px #00b894;
+    outline: none;
+}
+.row .col-4 form .button{
+    
+    float:right;
+    width: 30%;
+    background-color: rgb(65, 167, 250);
+    border: none;
+    color: white;
+    font-size: 20px;
+    
+    
+}
+.nav{
+    display: inline;
+    
+    
+}
+.nav a{
+    font-weight: bold;
+
+    color: black;
+    
+    padding-left: 20px;
+    margin: 0%;
+    padding-top: 10px;
+}
+.nav a:hover{
+    background-color: rgb(107, 107, 107);
+}
+.students{
+    text-align: center;
+}
+/* .admin a:hover{
+    box-shadow: 2px 3px blue;
+
+}
+.admin a{
+    background-color: rgb(67, 186, 241);
+    border-radius: 5px;
+    padding:2px;
+    text-decoration: none;
+    color: white;
+} */
+.buttons a{
+    width: 20%;
+}
+.admind{
+    float: left;
+    width: 25%;
+    height: 25vh;
+    margin: 5px;
+    background-color: grey;
+    border-radius: 5px 15px;
+    border: 0.5px solid black;
+    box-shadow: 5px 5px darkgray;
+    color: #fff;
+    padding: 20px;
+    font-weight: bold;
+    font-size: x-large;
+}
+.admind a{
+    padding: 5px;
+    width: 30%;
+    background-color: green;
+    float: right;
+    margin: 0;
+    text-align: center;
+    font-size: small;
+    font-weight: lighter;
+    color: whitesmoke;
+    text-decoration: none;
+    border-radius: 5px;
+}
+.admind a:hover{
+    box-shadow: 2px 2px 2px 2px white;
+}
+.sendlink{
+    float: right;
+    padding:10px;
+    width:30%;
+    color:white;
+    border-radius: 5px;
+    background-color: green;
+    text-decoration: none;
+    text-align: center;
+}
+.sendlink:hover{
+    box-shadow: 4px 4px 4px 4px black;
+}
+/* .sendlink:visited{
+    background-color: grey;
+} */
+.logout{
+    padding: 4px;
+    width: 7%;
+    color:white;
+    text-decoration: none;
+    float: right;
+    background-color: red;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 2px 2px black;
+    
+}
+.adduser{
+    float: right; 
+    text-decoration: none; 
+    margin-right: 5px;
+}
+.delete input{
+    background-color: red;
+    border-radius: 5px;
+    width: 70px;
+    border: none;
+    height: 30px;
+    color: white;
+}
+.delete a{
+    padding: 5px;
+    background-color: green;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+}
+.reset .btn{
+    background-color: aquamarine;
+    width: 10vw;
+}
+.reset input{
+    width: 30vw;
+}
+.new .btn{
+    background-color: aquamarine;
+    width: 10vw;
+}
+.links{
+    /* text-align: center; */
+}
+.links a{
+    text-decoration: none;
+    
+}
+.links a:hover{
+    text-decoration: underline;
+}
+.hrs{
+    text-align: center;
+    font-weight: bold;
+    color: white;
+}
+.hrs input{
+    height: 25px;
+    margin-right: 2%;
+    margin-bottom: 1%;
+    
+}
+.hrs .hrsbtn{
+    background-color:aquamarine;
+    width: 80px;
+    height: 30px;
+    border-radius: 5px;
+    text-align: center;
+    border: none;
+}
+.hrs select{
+    width: 8vw;
+    margin-right: 1%;
+}
+.hrs .hrsbtn:hover{
+    
+    border: 1px solid black;
+}
+.hrs form{
+    background-color: black;
+    height: 150px;
+    padding: 10px;
+    opacity: .8;
+   
+}
+.attbtn a{
+    padding: 5px;
+    text-decoration: none;
+    background-color: green;
+    color: white;
+    font-weight: bold;
+    border-radius: 5px;
+}
+.attbtn a:hover{
+   
+    color: green;
+    background-color: white;
+    border: 1px solid green;
+}

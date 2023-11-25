@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Teaches</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {%for s in staff%}
+      <tr>
+        <!-- <th scope="row">{{student.pk}}</th> -->
+        <td>{{s.username}}</td>
+        <td>{{s.unit}}</td>
+        <td><a href="{%url 'deletestaff-view' s.pk%}">Delete</a></td>
+      </tr>
+      {%endfor%}
+    
+    </tbody>
+  </table>
+{%endblock content%}

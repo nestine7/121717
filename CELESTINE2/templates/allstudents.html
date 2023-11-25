@@ -1,0 +1,29 @@
+{%extends 'base.html'%}
+{%block content%}
+<!-- {%for student in students%}{{student}}{%endfor%} -->
+<a href="/home/">&#8592;Back</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Reg_no</th>
+        <th scope="col">Name</th>
+        <th scope="col">Units</th>
+        <th scope="col">Clubs</th>
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {%for student in students%}
+      <tr>
+        <th scope="row">{{student.pk}}</th>
+        <td>{{student.name}}</td>
+        <td>{%for u in student.units.all%}{{u}}, {%endfor%}</td>
+        <td>{%for c in student.clubs.all%}{{c}},{%endfor%}</td>
+        <td><a href="{%url 'deletestudent-view' student.pk%}">Delete</a></td>
+      </tr>
+      {%endfor%}
+    
+    </tbody>
+  </table>
+{%endblock content%}

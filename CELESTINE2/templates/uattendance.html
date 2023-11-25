@@ -1,0 +1,56 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a>
+<div class="hrs">
+    <form action=""method="POST">
+        {%csrf_token%}
+        {{form}}
+        <input type="submit" value="Submit" class="hrsbtn">
+        
+    </form>
+    {% for field in form %}
+    
+        {{ field.errors }}
+        
+    
+    {% endfor %}
+    <p style="color:red;">{%for msg in messages%}{{msg}}{%endfor%}</p>
+</div>
+<div class="graph">
+    <div>
+        <canvas id="myChart2"></canvas>
+      </div>
+      
+      
+      
+      <script>
+        const ctx2 = document.getElementById('myChart2');
+      
+        new Chart(ctx2, {
+          type: 'line',
+          data: {
+            labels: [{%for s in students%}'{{s.name}}',{%endfor%}],
+            datasets: [{
+              label: 'days/sem',
+              data: [{%for s in students%}{{s.hours}},{%endfor%}],
+              borderWidth: 1
+            }] 
+          },
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true
+              }
+            }
+          }
+        });
+       
+      </script>
+</div>
+<div class="attbtn">
+    <a href="/attendancecsv/">Download attendance &#x2193; </a>
+</div>
+
+
+{%endblock content%}

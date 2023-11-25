@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a>
+<table class="table table-striped">
+    
+    
+    <thead>
+      <tr>
+        
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+        <th scope="col"></th>
+       
+
+      </tr>
+    </thead>
+    <tbody>
+       
+    
+        <tr>
+            <th>Lecturer:</th>
+            <td>{{lec}}</td>
+        </tr>
+        <tr>
+            <th>Subject:</th>
+            <td>{{subject}}</td>
+        </tr>
+        <tr>
+            <th>Number of classes:</th>
+            <td>{{classes}}</td>
+        </tr>
+        <tr>
+            <th>Absent classes:</th>
+            <td>{{absent}}</td>
+        </tr>
+   
+      
+      
+      
+    
+    </tbody>
+  </table>
+<table class="table table-striped">
+    
+    
+    <thead>
+      <tr>
+        
+        <th scope="col">Date</th>
+        <th scope="col">From_hrs</th>
+        <th scope="col">To_hrs</th>
+       
+        <th scope="col">Present</th>
+       
+
+      </tr>
+    </thead>
+    <tbody>
+        {%for d in data%}
+    
+        <tr>
+            <td>{{d.date}}</td>
+            
+            <td>{{d.From_hrs}}</td>
+            <td>{{d.To_hrs}}</td>
+            
+            <td>{{d.present}}</td>
+            
+        </tr>
+      {%endfor%}
+      
+      
+      
+    
+    </tbody>
+  </table>
+  {%endblock content%}

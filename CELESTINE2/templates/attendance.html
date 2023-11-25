@@ -1,0 +1,79 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a><a href="/logout/" class="logout">Logout</a>
+<center><h2 style="color: green;">{{class}}</h2></center>
+<hr>
+{%for msg in messages%}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  {{msg}}
+  <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{%endfor%}
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <!-- <h5>Upload students attendance and marks</h5> -->
+                <!-- <center>
+                    <form action=""method="POST"enctype="multipart/form-data">
+                        {%csrf_token%}
+                        <input
+                        name="data"
+                        placeholder="Excel Only"
+                        type="file"
+                        
+                        multiple
+                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet" style="margin-top: 20px;
+                        border: 1px solid rgb(80, 79, 79);width: 70%;align-items: center;"><br><br> 
+                        <input type="file" name="excel_file"accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"  /> <br><br> 
+                        <input type="submit"value="submit"class="btn btn-secondary"style="width:20%;">
+                    </form>
+                    
+                </center><br> -->
+                <div class="links">
+                  <a href="/grades/" >>>>>View Students</a><br>
+                  <a href="/model/" >>>>>Predict perfomance</a><br>
+                  <!-- <a href="/pdf_view/" class="btn btn-success " style="width:96%;;">viewpdf</a> -->
+                  <a href="/csv/" >>>>>Download attendance sheet</a><br>
+                  <a href="/updateattendance/" >>>>>Upload attendance </a>
+                  <!-- <a href="/predicted/" class="btn btn-primary " style="width:48%">View students</a> -->
+                </div>
+                
+        </div>
+        <!-- <div class="col-sm">
+           
+             
+              <div>
+                <canvas id="myChart2"></canvas>
+              </div>
+              
+              
+              
+              <script>
+                const ctx2 = document.getElementById('myChart2');
+              
+                new Chart(ctx2, {
+                  type: 'line',
+                  data: {
+                    labels: [{%for s in students%}'{{s.name}}',{%endfor%}],
+                    datasets: [{
+                      label: 'days/sem',
+                      data: [{%for s in students%}{{s.days}},{%endfor%}],
+                      borderWidth: 1
+                    }] 
+                  },
+                  options: {
+                    scales: {
+                      y: {
+                        beginAtZero: true
+                      }
+                    }
+                  }
+                });
+               
+              </script>
+        </div> -->
+    </div>
+</div>
+
+{%endblock content%}

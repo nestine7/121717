@@ -1,0 +1,39 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a>
+<center>{{class}} class</center>
+
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Reg_no</th>
+        <th scope="col">Name</th>
+        
+        <th scope="col">Cat1</th>
+        <th scope="col">Cat2</th>
+        <th scope="col">Cat3</th>
+        <th scope="col">Hours/sem</th>
+       
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {%for student in students%}
+      <tr>
+        <th scope="row">{{student.pk}}</th>
+        <td>{{student.name}}</td>
+       
+        <td>{{student.cat1}}</td>
+        <td>{{student.cat2}}</td>
+        <td>{{student.cat3}}</td>
+        <td>{{student.hours}}</td>
+        
+        <td><a href="{%url 'update-view' student.pk%}">Update</a></td>
+      </tr>
+      {%endfor%}
+    
+    </tbody>
+  </table>
+{%endblock content%}

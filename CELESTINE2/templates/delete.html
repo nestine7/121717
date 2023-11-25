@@ -1,0 +1,14 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<div class="delete">
+    <form action=""method="POST">
+        {%csrf_token%}
+        <h3>Are you sure you want to delete this record?</h3>
+        <input type="submit"value="Yes">
+        <a href="/allstudents/">Cancel</a>
+    </form>
+
+</div>
+
+{%endblock content%}

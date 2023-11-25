@@ -1,0 +1,6 @@
+<center><h1>{{class}}</h1></center>
+<h5>Registration number: {{student.pk}}</h5>
+<h5>Name: {{student.name}}</h5>
+<h5>Units: {%for u in student.units.all%}{{u}}, {%endfor%}</h5>
+<h5>Clubs: {%for c in student.clubs.all%}{{c}}, {%endfor%}</h5>
+<h3 style="color: red;">{{message}}</h3>

@@ -1,0 +1,46 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block content%}
+<a href="/home/">&#8592;Back</a>
+<center><b><h2 style="color: red;">{{class}}</h2></b></center>
+<a href="/notifications/" class="sendlink">Send notifications</a>
+<table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">Reg_no</th>
+        <th scope="col">Name</th>
+        
+        <th scope="col">Cat1</th>
+        <th scope="col">Cat2</th>
+        <th scope="col">Cat3</th>
+        <th scope="col">Hours/sem</th>
+        <th scope="col">Cat total</th>
+        <th scope="col">Prediction</th>
+       
+        <th scope="col"></th>
+
+      </tr>
+    </thead>
+    <tbody>
+    {%for p in predicted%}
+    
+      <tr>
+        <th scope="row">{{p.pk}}</th>
+        <td>{{p.name}}</td>
+       
+        <td>{{p.cat1}}</td>
+        <td>{{p.cat2}}</td>
+        <td>{{p.cat3}}</td>
+        <td>{{p.hours}}</td>
+        <td>{{p.total}}</td>
+        <td>{{p.prediction}}</td>
+        
+   
+      </tr>
+      
+      {%endfor%}
+    
+    </tbody>
+  </table>
+  <a href="/downloadfail/">Download Fail List</a>
+{%endblock content%}
